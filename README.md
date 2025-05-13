@@ -63,3 +63,35 @@ Este repositório contém uma aplicação web completa para a gestão de ordens 
 ---
 
 ## 🧱 Estrutura Recomendada
+GarageVintage-Automacao-WebOS/
+│
+├── app/
+│ ├── templates/
+│ │ ├── tela_login.html
+│ │ └── homepage.html
+│ ├── static/
+│ │ └── style.css / menu.js / function.js
+│ ├── garage_vintage.py # Aplicação principal Flask
+│ ├── baixar_os.py
+│ ├── imprimir_os.py
+│ ├── relatorio_xlsx.py
+│ └── utils/
+│ └── conexao.py # conexão com banco separada (opcional)
+│
+├── relatorios/
+│ ├── relatorio_serviços.xlsx
+│ ├── grafico_pizza_top5_marcas.png
+│ ├── grafico_top10_marcas.png
+│ └── tabela_dinamica.csv
+│
+├── templates_base/
+│ ├── orcamento.png
+│ └── os_garage.png
+│
+├── scripts/
+│ ├── baixar_os.bat
+│ └── imprimir_os.bat
+│
+├── .env.example
+├── requirements.txt
+└── README.md
