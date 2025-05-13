@@ -95,5 +95,6 @@ GarageVintage-Automacao-WebOS/
 ├── .env.example
 ├── requirements.txt
 └── README.md
+
 📬 Contato
 Autor: [Guilherme Salmazzo]
