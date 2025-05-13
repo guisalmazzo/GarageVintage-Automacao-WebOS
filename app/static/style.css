@@ -1,0 +1,382 @@
+/* Corpo da página */
+body { 
+    background-image: url(../static/torno.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Modo escuro */
+.dark-mode {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+/* Modo escuro para o formulário */
+.dark-mode form {
+    background-color: rgba(50, 50, 50, 0.9); /* Fundo escuro para o formulário */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Ajuste da sombra */
+}
+
+.dark-mode input {
+    background-color: #333; /* Fundo escuro para os campos */
+    color: #f0f0f0; /* Texto claro */
+    border: 1px solid #555; /* Borda mais escura */
+}
+
+.dark-mode input:focus {
+    border: 1px solid #4CAF50; /* Mantém a borda verde ao focar */
+    outline: none; /* Remover contorno padrão */
+}
+
+.dark-mode label {
+    color: #f0f0f0; /* Texto claro para o rótulo */
+}
+
+.dark-mode .btn_salvar,
+.dark-mode .btn_enviar,
+.dark-mode .btn_sair {
+    background-color: #333; /* Fundo escuro para os botões */
+    color: #f0f0f0; /* Texto claro */
+}
+
+.dark-mode .btn_salvar:hover,
+.dark-mode .btn_enviar:hover,
+.dark-mode .btn_sair:hover {
+    background-color: #444; /* Cor mais clara ao passar o mouse */
+}
+
+.dark-mode .btn_sair {
+    background-color: #d32f2f; /* Vermelho no modo escuro */
+}
+
+.dark-mode .btn_sair:hover {
+    background-color: #b71c1c; /* Escurece o vermelho ao passar o mouse */
+}
+
+/* Menu Mobile */
+.menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.menu-mobile-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6); /* Ajuste para mais transparência */
+    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: background-color 0.3s ease-in-out; /* Transição suave ao abrir */
+}
+
+.menu-mobile-content.active {
+    display: block; /* Exibe o menu quando ativo */
+}
+
+.menu-mobile-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-mobile-content ul li {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.menu-mobile-content .menu-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.menu-mobile-content .menu-btn:hover {
+    color: #007bff; /* Azul empresarial */
+}
+
+.menu-mobile-content .fechar-menu {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.menu-mobile-content .fechar-menu:hover {
+    background-color: #d32f2f;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+.abrir-menu {
+    display: block;
+    z-index: 20;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+    .menu-icon {
+        font-size: 20px;
+    }
+
+    .menu-mobile-content ul li {
+        margin-bottom: 15px;
+    }
+
+    .menu-mobile-content .menu-btn {
+        font-size: 20px;
+    }
+
+    .menu-mobile-content .fechar-menu {
+        font-size: 16px;
+    }
+}
+
+/* Estilo do Título e Formulário */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5em; /* Aumentado para maior destaque */
+    color: #2b1ea5; /* Cor azul */
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.5em; /* Aumentado para maior destaque */
+    color: #555; /* Cor cinza escuro */
+}
+
+form {
+    width: 90%; /* Ajuste inicial para telas pequenas */
+    max-width: 400px; /* Largura máxima para telas grandes */
+    margin: 20px auto;
+    background-color: rgba(238, 228, 228, 0.9);
+    position: relative;
+    top: 30%; /* Ajustado para melhor centralização */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block; /* Exibe em bloco */
+}
+
+input {
+    width: calc(100% - 20px); /* Ajustado para largura responsiva */
+    height: 40px;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border: 1px solid #4CAF50; /* Borda verde ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+.btn_salvar,
+.btn_aces,
+.btn_enviar,
+.btn_sair {
+    width: 100%; /* Botões ocupam toda a largura do formulário */
+    padding: 10px; /* Área clicável maior */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Fonte consistente */
+    margin-bottom: 10px; /* Espaçamento entre botões */
+}
+
+.btn_aces { 
+	background-color: #ff6600; /* Fundo Laranja */
+    color: white; /* Texto branco */ 
+}
+
+.btn_aces:hover {
+    background-color: #dd5500; /* Escurece ao passar o mouse */
+}
+
+
+.btn_salvar {
+    background-color: #4CAF50; /* Fundo verde */
+    color: white; /* Texto branco */
+}
+
+.btn_salvar:hover {
+    background-color: #45a049; /* Escurece ao passar o mouse */
+}
+
+.btn_enviar {
+    background-color: white; /* Fundo branco */
+    color: #333; /* Texto escuro */
+}
+
+.btn_enviar:hover {
+    background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
+}
+
+.btn_sair {
+    background-color: #f44336; /* Vermelho para o botão de sair */
+}
+
+.btn_sair:hover {
+    background-color: #d32f2f; /* Escurece ao passar o mouse */
+}
+
+.logo {
+    width: 100px; /* Ajustado para melhor visualização */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Melhor alinhamento */
+    margin: 20px auto; /* Centraliza a logo */
+}
+
+.whatsapp_img {
+    color: #25D366; /* Cor verde do WhatsApp */
+    font-size: 24px; /* Tamanho do ícone */
+    margin-left: 10px; /* Espaçamento entre o botão e o ícone */
+    vertical-align: middle; /* Alinha verticalmente o ícone ao botão */
+}
+
+/* Consultas de Mídia para Responsividade */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Reduz o tamanho do título em telas pequenas */
+    }
+
+    h2 {
+        font-size: 1.2em; /* Reduz o tamanho do subtítulo em telas pequenas */
+    }
+
+    form {
+        padding: 20px; /* Reduz o preenchimento do formulário */
+    }
+
+    input {
+        height: 35px; /* Ajusta a altura dos campos em telas pequenas */
+    }
+
+    .btn_salvar,
+    .btn_enviar,
+	.btn_aces,
+    .btn_sair {
+        padding: 8px; /* Ajusta o preenchimento dos botões em telas pequenas */
+        font-size: 14px; /* Reduz o tamanho da fonte dos botões */
+    }
+
+    .logo {
+        width: 80px; /* Ajusta a largura da logo em telas pequenas */
+    }
+
+    .whatsapp_img {
+        font-size: 20px; /* Ajusta o tamanho do ícone do WhatsApp em telas pequenas */
+    }
+}
+
+/* Estilo dos Ícones no Menu Mobile */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    padding: 10px;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.mobile-menu a {
+    color: white; /* Texto branco */
+    padding: 10px 15px; /* Espaçamento interno */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+.mobile-menu a:hover {
+    background-color: #555; /* Muda a cor de fundo ao passar o mouse */
+}
+
+
+.container {
+ display: flex;
+align-items: center;
+font-family: Arial, sans-serif;
+ } .label {  
+argin-right: 10px;
+font-size: 18px;
+
+ }
+.switch {
+ position: relative;
+display: inline-block;
+width: 60px;
+height: 34px;
+
+}
+.switch input {
+ opacity: 0;
+width: 0;
+height: 0;
+ }
+.slider {
+ position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+ bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+ }
+ .slider:before {
+ position: absolute;
+content: "";
+ height: 26px;
+width: 26px;
+left: 4px;
+ bottom: 4px;
+background-color: #ff6600;
+transition: .4s;
+ border-radius: 50%;
+}
+input:checked + .slider 
+{
+background-color: #2196F3;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+
+
+body {
+font-size: 16px; /* Tamanho de fonte padrão */
+}

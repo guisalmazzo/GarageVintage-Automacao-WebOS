@@ -1,0 +1,61 @@
+body {
+    background-image: url(../static/torno.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Arial', sans-serif; /* Fonte mais moderna */
+    color: #333; /* Cor de texto padrão */
+}
+
+div {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 80px;
+    border-radius: 20px;
+    color: #333; /* Cor do texto ajustada */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adicionado sombra para destacar o div */
+}
+
+input {
+    padding: 15px;
+    border: 1px solid #ccc; /* Ajuste na borda para melhor contraste */
+    outline: none;
+    font-size: 15px;
+    border-radius: 5px; /* Borda arredondada */
+    width: calc(100% - 20px); /* Tornar input mais responsivo */
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /* Cor de fundo verde para botões */
+    padding: 15px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom: 10px; /* Espaço entre os botões */
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049; /* Cor verde escuro ao passar o mouse */
+}
+
+/* Adicionando um ajuste para responsividade */
+@media (max-width: 600px) {
+    div {
+        padding: 40px; /* Reduz preenchimento em telas menores */
+    }
+
+    input {
+        font-size: 14px; /* Ajuste do tamanho da fonte para telas pequenas */
+        padding: 12px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 12px;
+    }
+}

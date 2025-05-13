@@ -1,0 +1,9 @@
+Flask
+fpdf
+mariadb
+selenium
+PyPDF2
+pandas
+matplotlib
+python-dotenv
+pywin32; sys_platform == 'win32'

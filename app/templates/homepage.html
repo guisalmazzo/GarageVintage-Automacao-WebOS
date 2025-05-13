@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../static/menu.js" defer></script>
+    <script src="../static/function.js" defer></script>
+    <title>ORÇAMENTO</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('../static/torno.jpg');
+            background-size: cover;
+            transition: zoom 0.3s ease;
+        }
+    </style>
+    <script>
+        function zoomIn() {
+            document.body.style.transform = "scale(1.4)";
+            document.body.style.transformOrigin = "0 0";
+        }
+
+        function zoomInII() {
+            document.body.style.zoom = "2";
+        }
+
+        function zoomInIIoff() {
+            document.body.style.zoom = "1";
+        }
+
+        function zoomoff() {
+            document.body.style.transform = "scale(1.0)";
+            document.body.style.transformOrigin = "0 0";
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div id="btn-menu" class="menu-icon"><i class="bi bi-list"></i> Menu</div>
+        <div id="overlay-menu" class="overlay"></div>
+        <nav id="menu-mobile" class="menu-mobile-content">
+            <ul>
+                <li><button id="increaseFontBtn" class="menu-btn"><i class="fas fa-text-height"></i></button></li>
+                <li><button id="darkModeBtn" class="menu-btn"><i class="fas fa-moon"></i></button></li>
+                <li><center><button class="fechar-menu" onclick="zoomInII()">Acessibilidade Visual CSS</button></center></li>
+                <li><center><button class="fechar-menu" onclick="zoomInIIoff()">Normal CSS</button></center></li>
+                <li><button id="btn-fechar-menu" class="fechar-menu"><i class="fas fa-times"></i></button></li>
+            </ul>
+        </nav>
+
+        <div>
+            <h1>SISTEMA DE ORÇAMENTO WEB</h1>
+            <h2>DETALHAMENTO</h2>
+        </div>
+    </header>
+
+    <!-- Formulário principal -->
+    <form action="/salvar" method="POST">
+        <div class="form-group"><label for="id_cliente">Cliente: </label><input type="text" name="cliente" id="id_cliente" autocomplete="off"></div>
+        <div class="form-group"><label for="id_endereco">Endereço: </label><input type="text" name="endereco" id="id_endereco" autocomplete="off"></div>
+        <div class="form-group"><label for="id_telefone">Telefone: </label><input type="tel" name="telefone" id="id_telefone" autocomplete="off"></div>
+        <div class="form-group"><label for="id_descricao">Descrição: </label><input type="text" name="descricao" id="id_descricao" autocomplete="off"></div>
+        <div class="form-group"><label for="id_execucao">Horas Estimadas de Execução: </label><input type="number" step="0.01" name="execucao" id="id_execucao" autocomplete="off"></div>
+        <div class="form-group"><label for="id_hora">Valor da Hora:</label><input type="number" step="0.01" name="hora" id="id_hora" autocomplete="off"></div>
+        <div class="form-group"><label for="id_material">Valor do Material Utilizado: </label><input type="number" step="0.01" name="material" id="id_material" autocomplete="off"></div>
+        <div class="form-group"><label for="id_entrega">Prazo Estimado de Entrega: </label><input type="text" name="entrega" id="id_entrega" autocomplete="off"></div>
+        <div class="form-actions">
+            <input class="btn_salvar" type="submit" name="salvar" value="Salvar">
+            <input class="btn_sair" type="submit" formaction="/logout" name="sair" value="Sair">
+        </div>
+        <div class="form-actions">
+            <button class="btn_enviar" type="submit" formaction="/enviar_orcamento" formmethod="GET" onclick="enviar_orcamento()" formnovalidate>
+                <i class="bi bi-whatsapp whatsapp_img"></i>
+            </button>
+        </div>
+    </form>
+
+    <!-- Botão: Relatório de Faturamento Excel -->
+    <form action="/relatorio_faturamento_excel" method="POST">
+        <div class="form-actions">
+            <input class="btn_aces" type="submit" value="Relatório de Faturamento Excel">
+        </div>
+    </form>
+
+    <!-- Formulário de switches (OS Auto / Impressão Auto) -->
+    <form action="/buscar1" method="POST">
+        <div class="form-actions">
+            <div class="container">
+                <table border="0" width="90%">
+                    <tr><td><span class="label">OS Auto</span></td><td>On / Off</td></tr>
+                    <tr><td></td><td><label class="switch"><input type="checkbox" name="osauto" id="osauto"><span class="slider"></span></label></td></tr>
+                    <tr><td><span class="label">Impressão Auto</span></td><td>On / Off</td></tr>
+                    <tr><td></td><td><label class="switch"><input type="checkbox" name="impressaoauto" id="impressaoauto"><span class="slider"></span></label></td></tr>
+                </table>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
