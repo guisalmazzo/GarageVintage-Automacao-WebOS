@@ -8,4 +8,58 @@ Este repositório contém uma aplicação web completa para a gestão de ordens 
 - Impressão automática
 - Relatórios dinâmicos em Excel com gráficos
 
-... (restante do conteúdo omitido por brevidade)
+---
+
+## 🌐 Aplicação Flask (`garage_vintage.py`)
+
+### Principais Funcionalidades:
+- Interface web de login e dashboard
+- Cadastro de orçamento e geração automática de PDF com FPDF
+- Envio automatizado de PDF via WhatsApp (usando Selenium)
+- Integração com banco MariaDB para registro de orçamentos
+- Execução remota de scripts auxiliares via botão (baixar/imprimir OS)
+
+### Endpoints:
+| Rota | Descrição |
+|------|-----------|
+| `/` | Tela de login |
+| `/homepage.html` | Página principal com status de automações |
+| `/salvar` | Salva dados do orçamento e gera PDF |
+| `/enviar_orcamento` | Extrai dados do PDF e envia via WhatsApp |
+| `/toggle_os_auto` | Ativa script de download automático |
+| `/toggle_impressao_auto` | Ativa script de impressão automática |
+| `/relatorio_faturamento_excel` | Gera e retorna relatório financeiro |
+
+---
+
+## 📦 Scripts Auxiliares
+
+| Script | Função |
+|--------|--------|
+| `baixar_os.py` | Conecta ao Gmail e baixa arquivos .xlsx/.csv com ordens |
+| `imprimir_os.py` | Imprime automaticamente todos os arquivos de uma pasta |
+| `relatorio_xlsx.py` | Gera gráficos e CSV a partir dos serviços realizados |
+
+---
+
+## 🖨️ Automação com `.bat`
+
+| Arquivo | Descrição |
+|---------|-----------|
+| `baixar_os.bat` | Executa o script de download de OS |
+| `imprimir_os.bat` | Executa a impressão das ordens |
+
+---
+
+## 📊 Relatórios e Visualizações
+
+| Arquivo | Descrição |
+|---------|-----------|
+| `relatorio_serviços.xlsx` | Planilha com os dados históricos dos serviços |
+| `orcamento.png` | Template visual para o PDF gerado |
+| `os_garage.png` | Exemplo de layout da ordem de serviço |
+| `Orcamento_GarageVintage.xlsx` | Modelo de orçamento editável |
+
+---
+
+## 🧱 Estrutura Recomendada
